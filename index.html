@@ -3,211 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПК СП «РЕШЕНИЕ» — Жилищная social программа</title>
+    <title>ПК СП «РЕШЕНИЕ» — Жилищная социальная программа</title>
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #2c3e50;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #e2e8f0;
-            padding: 20px;
-            text-align: center;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .main-image-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-        .main-image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; color: #2c3e50; margin: 0; padding: 0; line-height: 1.6; }
+        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 20px; text-align: center; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .main-banner { text-align: center; margin: 25px auto; max-width: 500px; padding: 0 15px; }
+        .main-banner img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(15, 76, 129, 0.15); }
         h1 { color: #0f4c81; font-size: 2.2rem; text-align: center; }
         h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
         h3 { color: #2c3e50; margin-top: 0; }
-        .grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-        .card {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 25px;
-        }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; }
         .card.success { border-top: 4px solid #2ecc71; }
         .card.danger { border-top: 4px solid #e74c3c; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
-        .calc-box {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
-            margin: 40px 0;
-        }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; }
-        input {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 6px;
-            box-sizing: border-box;
-            font-size: 1rem;
-        }
-        .result-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 25px;
-            background: #f1f5f9;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        .benefit-box {
-            background: #e0f2fe;
-            border: 1px solid #bae6fd;
-            padding: 20px;
-            text-align: center;
-            border-radius: 8px;
-            margin-top: 20px;
-            font-size: 1.3rem;
+        
+        /* Стили для юридически чистой кнопки перехода */
+        .btn-calc-link {
+            display: inline-block;
+            background-color: #0f4c81;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
             font-weight: bold;
-            color: #0369a1;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.3);
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            text-align: center;
         }
-        footer {
-            background-color: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-            padding: 30px 20px;
-            margin-top: 60px;
-            font-size: 0.85rem;
-            color: #64748b;
-            text-align: justify;
-            line-height: 1.5;
-        }
+        .btn-calc-link:hover { background-color: #0c3d69; transform: translateY(-2px); }
+        .center-box { text-align: center; margin: 20px 0; }
+        
+        .calc-redirect-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 35px; text-align: center; margin: 40px 0; }
+        .legal-notice { font-size: 0.8rem; color: #64748b; margin-top: 15px; text-align: justify; line-height: 1.4; }
+        footer { background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 30px 20px; margin-top: 60px; font-size: 0.85rem; text-align: center; color: #64748b; }
     </style>
 </head>
 <body>
-
     <header>
-        <strong>ПК СОЦИАЛЬНЫХ ПРОГРАММ «РЕШЕНИЕ»</strong>
+        <div class="container">
+            <strong style="color: #0f4c81; font-size: 1.2rem; letter-spacing: 1px;">ПК СОЦИАЛЬНЫХ ПРОГРАММ «РЕШЕНИЕ»</strong>
+        </div>
     </header>
-
     <div class="container">
-        <h1>Жилищная социальная программа кооператива</h1>
-        
-        <div class="main-image-container">
-            <img src="handshake.png" alt="ПК СП РЕШЕНИЕ">
+        <!-- БЛОК С БАННЕРОМ -->
+        <div class="main-banner">
+            <img src="pksp-banner.png" alt="ПК Социальных программ РЕШЕНИЕ">
         </div>
 
-        <h2>Преимущества участия в целевой программе</h2>
-        <p>Честное ознакомительное сравнение условий паевых программ потребительской кооперации и коммерческих банков.</p>
+        <!-- КНОПКА ПОД БАННЕРОМ -->
+        <div class="center-box">
+            <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link">Перейти в калькулятор ЦПП</a>
+        </div>
 
+        <h1>Жилищная социальная программа кооператива</h1>
+        <p style="text-align: center; color: #64748b; margin-top: -15px;">ПКСП РЕШЕНИЕ</p>
+        
+        <h2>Преимущества участия</h2>
         <div class="grid">
             <div class="card success">
-                <h3>Программа ПК СП «РЕШЕНИЕ» ✓</h3>
+                <h3>ПКСП «РЕШЕНИЕ» ✓</h3>
                 <ul>
-                    <li><strong>Источник финансирования:</strong> Средства паевого фонда кооператива</li>
-                    <li><strong>Принцип распределения:</strong> Взаимопомощь пайщиков в рамках уставных целей</li>
-                    <li><strong>Условия:</strong> Прозрачный фиксированный график паевых взносов</li>
-                    <li><strong>Страхование жизни:</strong> Исключительно добровольное решение пайщика</li>
-                    <li><strong>Оформление:</strong> Паспорт гражданина РФ и уставное заявление</li>
+                    <li>Источник: Паевой фонд взаимопомощи</li>
+                    <li>Условия: Фиксированные уставные взносы</li>
+                    <li>Оформление: Паспорт, заявление члена кооператива</li>
                 </ul>
             </div>
             <div class="card danger">
                 <h3>Коммерческий банк ✗</h3>
                 <ul>
-                    <li><strong>Источник финансирования:</strong> Привлеченные кредитные средства / вклады</li>
-                    <li><strong>Принцип распределения:</strong> Извлечение коммерческой прибыли</li>
-                    <li><strong>Ставка по рынку:</strong> От 22% до 28% годовых</li>
-                    <li><strong>Дополнительные услуги:</strong> Ежегодное платное страхование жизни и залога</li>
-                    <li><strong>Оформление:</strong> Подтверждение доходов, проверка кредитной истории</li>
+                    <li>Источник: Кредитные средства банка</li>
+                    <li>Ставка: Рыночные проценты годовых</li>
+                    <li>Страховка: Обязательное личное и имущественное страхование</li>
                 </ul>
             </div>
         </div>
-        <h2>Интерактивный ориентировочный расчет</h2>
-        <p>Убедитесь в разнице между коммерческими финансовыми инструментами и уставной программой взаимопомощи.</p>
 
-        <div class="calc-box">
-            <div class="form-group">
-                <label>Ориентировочная стоимость недвижимости (₽)</label>
-                <input type="number" id="realtyCost" value="7000000" oninput="calculateBenefit()">
-            </div>
-            <div class="form-group">
-                <label>Первоначальный паевой взнос (30% или более, ₽)</label>
-                <input type="number" id="firstPay" value="2100000" oninput="calculateBenefit()">
-            </div>
-            <div class="form-group">
-                <label>Планируемый срок участия в программе (лет)</label>
-                <input type="number" id="years" value="10" oninput="calculateBenefit()">
-            </div>
-
-            <div class="result-grid">
-                <div>
-                    <h3 style="color:#0f4c81;">ПК СП «РЕШЕНИЕ»</h3>
-                    <p>Примерный ежемесячный взнос:<br><strong id="pkMonthly" style="font-size:1.3rem; color:#2ecc71;">0 ₽</strong></p>
-                </div>
-                <div>
-                    <h3 style="color:#e74c3c;">Коммерческий банк (под 22%)</h3>
-                    <p>Примерный платеж по кредиту:<br><strong id="bankMonthly" style="font-size:1.3rem; color:#e74c3c;">0 ₽</strong></p>
-                </div>
-            </div>
-
-            <div class="benefit-box">
-                Ваша ориентировочная экономия на переплатах: <span id="totalBenefit">0 ₽</span>
+        <h2>Расчет участия в целевой программе</h2>
+        <!-- ОФИЦИАЛЬНЫЙ БЛОК ПЕРЕНАПРАВЛЕНИЯ -->
+        <div class="calc-redirect-box">
+            <h3>Интерактивный калькулятор ЦПП</h3>
+            <p style="color: #475569; max-width: 600px; margin: 10px auto 25px auto;">
+                Для проведения точного расчета параметров паевого участия, графиков снижения задолженности и объемов финансирования перейдите на наш верифицированный калькулятор.
+            </p>
+            <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">Открыть калькулятор программ</a>
+            
+            <!-- ЮРИДИЧЕСКИЙ ДИСКЛЕЙМЕР ПО ФЗ -->
+            <div class="legal-notice">
+                <strong>Важная правовая информация:</strong> Деятельность осуществляется в рамках Федерального закона № 3085-1 «О потребительской кооперации (потребительских обществах, их союзах) в Российской Федерации». Внутренний расчет потребительского кооператива не является финансовой, банковской услугой, займом или публичной офертой. Расчет взносов производится на основании уставного графика снижения паевой задолженности. Доступ к целевым программам предоставляется исключительно членам (пайщикам) ПКСП «Решение».
             </div>
         </div>
     </div>
 
     <footer>
-        Потребительский кооператив социальных программ «РЕШЕНИЕ» (ПК СП «РЕШЕНИЕ») осуществляет деятельность исключительно в рамках Закона РФ № 3085-1 «О потребительской кооперации в Российской Федерации». Кооператив не является банком, микрофинансовой организацией или профессиональным участником рынка ценных бумаг, не оказывает банковских услуг и не осуществляет привлечение денежных средств населения под проценты. Представленный калькулятор является интерактивной моделью для ознакомления и производит математический предварительный расчет. Результаты расчетов, графики и любые текстовые материалы на данном сайте не являются рекламой финансовых услуг, не гарантируют одобрение участия в программах и ни при каких условиях не являются публичной офертой, определяемой положениями Статьи 437 Гражданского кодекса Российской Федерации. Точные условия участия, уставные требования к пайщикам и графики снижения паевой задолженности утверждаются строго в соответствии с Уставом кооператива и внутренними Положениями в официальных офисах ПК СП «РЕШЕНИЕ».
+        <div class="container">
+            <p>© 2026 ПКСП «РЕШЕНИЕ». Все права защищены. Деятельность некоммерческая, регулируется Законодательством РФ.</p>
+        </div>
     </footer>
-
-    <script>
-        function calculateBenefit() {
-            let cost = parseFloat(document.getElementById('realtyCost').value) || 0;
-            let first = parseFloat(document.getElementById('firstPay').value) || 0;
-            let years = parseFloat(document.getElementById('years').value) || 0;
-            
-            let months = years * 12;
-            if (months <= 0) return;
-
-            let pkAmountToPay = cost - first;
-            if (pkAmountToPay < 0) pkAmountToPay = 0;
-            let pkMonthly = pkAmountToPay / months;
-
-            let bankAmount = cost - first;
-            if (bankAmount < 0) bankAmount = 0;
-            let monthlyRate = 22 / 12 / 100;
-            let bankMonthly = bankAmount * (monthlyRate + (monthlyRate / (Math.pow(1 + monthlyRate, months) - 1)));
-            if (isNaN(bankMonthly) || !isFinite(bankMonthly)) bankMonthly = 0;
-
-            let totalBankPay = bankMonthly * months;
-            let totalPkPay = pkAmountToPay;
-            let benefit = totalBankPay - totalPkPay;
-            if (benefit < 0) benefit = 0;
-
-            document.getElementById('pkMonthly').innerText = Math.round(pkMonthly).toLocaleString('ru-RU') + ' ₽';
-            document.getElementById('bankMonthly').innerText = Math.round(bankMonthly).toLocaleString('ru-RU') + ' ₽';
-            document.getElementById('totalBenefit').innerText = Math.round(benefit).toLocaleString('ru-RU') + ' ₽';
-        }
-        calculateBenefit();
-    </script>
 </body>
 </html>
