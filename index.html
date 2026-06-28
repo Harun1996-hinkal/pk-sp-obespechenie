@@ -10,17 +10,29 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
         .main-banner { text-align: center; margin: 25px auto; max-width: 500px; padding: 0 15px; }
         .main-banner img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(15, 76, 129, 0.15); }
-        h1 { color: #0f4c81; font-size: 2.2rem; text-align: center; }
+        h1 { color: #0f4c81; font-size: 2.2rem; text-align: center; margin-top: 30px; }
         h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
         h3 { color: #2c3e50; margin-top: 0; }
         .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
         @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
-        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; }
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-bottom: 20px; }
         .card.success { border-top: 4px solid #2ecc71; }
         .card.danger { border-top: 4px solid #e74c3c; }
         ul { padding-left: 20px; }
         li { margin-bottom: 10px; }
         
+        /* Стили для шагов */
+        .steps { list-style: none; padding: 0; }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #0f4c81; }
+        .step-num { background: #0f4c81; color: #fff; font-weight: bold; min-width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 1.1rem; }
+        .step-text h4 { margin: 0 0 5px 0; color: #0f4c81; font-size: 1.1rem; }
+        .step-text p { margin: 0; color: #475569; font-size: 0.95rem; }
+
+        /* Стили FAQ */
+        .faq-item { margin-bottom: 15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .faq-question { font-weight: bold; color: #0f4c81; margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: #475569; font-size: 0.95rem; margin: 0; }
+
         .btn-calc-link {
             display: inline-block;
             background-color: #0f4c81;
@@ -41,7 +53,7 @@
         .calc-redirect-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 35px; text-align: center; margin: 40px 0; }
         .legal-notice { font-size: 0.8rem; color: #64748b; margin-top: 15px; text-align: justify; line-height: 1.4; }
         footer { background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 30px 20px; margin-top: 60px; font-size: 0.85rem; text-align: center; color: #64748b; }
-        .address-box { margin-bottom: 15px; font-style: normal; color: #475569; font-size: 0.9rem; }
+        .address-box { margin-bottom: 15px; font-style: normal; color: #475569; font-size: 0.9rem; line-height: 1.6; }
     </style>
 </head>
 <body>
@@ -63,8 +75,7 @@
 
         <h1>Жилищная социальная программа кооператива</h1>
         <p style="text-align: center; color: #64748b; margin-top: -15px;">ПКСП РЕШЕНИЕ</p>
-        
-        <h2>Преимущества участия</h2>
+            <h2>Преимущества участия</h2>
         <div class="grid">
             <div class="card success">
                 <h3>ПКСП «РЕШЕНИЕ» ✓</h3>
@@ -84,28 +95,73 @@
             </div>
         </div>
 
+        <!-- БЛОК: КАК ЭТО РАБОТАЕТ -->
+        <h2>Как это работает</h2>
+        <ul class="steps">
+            <li class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                    <h4>Вступление в проект</h4>
+                    <p>Подача заявления и минимального пакета документов (паспорт) для вступления в члены ПКСП «РЕШЕНИЕ».</p>
+                </div>
+            </li>
+            <li class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                    <h4>Выбор недвижимости</h4>
+                    <p>Вы сами подбираете любое готовое жилье на вторичном рынке Республики Дагестан с зарегистрированным правом собственности («зеленкой»).</p>
+                </div>
+            </li>
+            <li class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                    <h4>Паевой взнос</h4>
+                    <p>Вы вносите свою первоначальную часть паевого взноса (от 30% до 50% стоимости выбранного жилья) на расчетный счет организации.</p>
+                </div>
+            </li>
+            <li class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                    <h4>Выкуп и заселение</h4>
+                    <p>Кооператив добавляет недостающую часть суммы, выкупает объект и передает его вам в пользование. Вы заселяетесь по принципу «заходи и живи».</p>
+                </div>
+            </li>
+            <li class="step-item">
+                <div class="step-num">5</div>
+                <div class="step-text">
+                    <h4>Полная собственность</h4>
+                    <p>Вы выплачиваете оставшуюся часть паевого долга по фиксированному графику рассрочки. После финального платежа жилье переоформляется на вас в Росреестре.</p>
+                </div>
+            </li>
+        </ul>
+
+        <!-- БЛОК: ДОКУМЕНТЫ ОРГАНИЗАЦИИ -->
+        <h2>Документы организации</h2>
+        <div class="card" style="border-top: 4px solid #0f4c81; margin-bottom: 30px;">
+            <h3>Официальные учредительные документы</h3>
+            <p style="color: #64748b; font-size: 0.95rem;">Деятельность кооператива полностью открыта и прозрачна. Вы можете ознакомиться с нашими документами:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 12px;">📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ» (PDF)</a></li>
+                <li style="margin-bottom: 12px;">📄 <a href="/docs/programma.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Положение о целевой программе «Доступное жилье» (PDF)</a></li>
+            </ul>
+        </div>
+
+        <!-- БЛОК: ВОПРОСЫ И ОТВЕТЫ (FAQ) -->
+        <h2>Часто задаваемые вопросы (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">В чем выгода кооператива, если нет ссудных процентов?</div>
+            <p class="faq-answer">ПКСП — это некоммерческая структура. Мы не зарабатываем на процентах. Деятельность, содержание аппарата и обслуживание программ финансируются исключительно за счет фиксированных уставных членских взносов, которые открыто утверждаются Советом кооператива.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Что будет, если у меня возникнут временные финансовые трудности?</div>
+            <p class="faq-answer">В отличие от коммерческих банков, мы не применяем скрытые штрафы. Каждая ситуация рассматривается Правлением в индивидуальном порядке, пайщику могут быть предоставлены каникулы. При форс-мажоре участник имеет право выйти из программы с полным возвратом его паевых взносов согласно ФЗ № 3085-1.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Почему объект недвижимости до конца выплат оформлен на кооператив?</div>
+            <p class="faq-answer">Это главная юридическая гарантия сохранности общего паевого фонда и безопасности капитала инвесторов. Кооператив выступает гарантом и защитником имущества, пока пайщик полностью не закроет обязательства по графику уставной рассрочки.</p>
+        </div>
+
+        <!-- БЛОК РАСЧЕТА И ПРАВОВОЙ ОГОВОРКИ -->
         <h2>Расчет участия в целевой программе</h2>
         <div class="calc-redirect-box">
             <h3>Интерактивный калькулятор ЦПП</h3>
-            <p style="color: #475569; max-width: 600px; margin: 10px auto 25px auto;">
-                Для проведения точного расчета параметров паевого участия, графиков паевых взносов и объемов целевого паевого накопления перейдите на наш верифицированный калькулятор.
-            </p>
-            <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">Открыть калькулятор программ</a>
-            
-            <div class="legal-notice">
-                <strong>Важная правовая информация:</strong> Деятельность осуществляется в рамках Федерального закона № 3085-1 «О потребительской кооперации (потребительских обществах, их союзах) в Российской Федерации». Внутренний расчет потребительского кооператива не является финансовой, банковской услугой, займом или публичной офертой. Расчет взносов производится на основании уставного графика внесения оставшейся части паевого взноса. Доступ к целевым программам предоставляется исключительно членам (пайщикам) ПКСП «Решение».
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <!-- БЛОК С АДРЕСОМ И ИНДЕКСОМ -->
-            <address class="address-box">
-                <strong>Адрес кооператива:</strong> Индекс 367915, Республика Дагестан, г. Махачкала, ул. Плеханова, д. 50
-            </address>
-            <p>© 2026 ПКСП «РЕШЕНИЕ». Все права защищены. Деятельность некоммерческая, регулируется Законодательством РФ.</p>
-        </div>
-    </footer>
-</body>
-</html>
