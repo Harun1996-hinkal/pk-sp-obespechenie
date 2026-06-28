@@ -14,7 +14,6 @@
         h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
         h3 { color: #2c3e50; margin-top: 0; }
         
-        /* СТИЛИ ДЛЯ РАСКРЫВАЮЩЕГОСЯ СТОЛБЦА (АККОРДЕОН) */
         .accordion-btn {
             background-color: #f8fafc;
             color: #0f4c81;
@@ -81,8 +80,25 @@
             text-align: center;
         }
         .btn-calc-link:hover { background-color: #0c3d69; transform: translateY(-2px); }
-        .center-box { text-align: center; margin: 20px 0; }
         
+        /* СТИЛЬ ДЛЯ КНОПОК ВОРОНКИ В WHATSAPP */
+        .btn-wa-funnel {
+            display: inline-block;
+            background-color: #25d366;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .btn-wa-funnel:hover { background-color: #20ba5a; transform: translateY(-1px); }
+
+        .center-box { text-align: center; margin: 20px 0; }
         .calc-redirect-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 35px; text-align: center; margin: 20px 0; }
         .legal-notice { font-size: 0.8rem; color: #64748b; margin-top: 15px; text-align: justify; line-height: 1.4; }
         footer { background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 30px 20px; margin-top: 60px; font-size: 0.85rem; text-align: center; color: #64748b; }
@@ -96,7 +112,6 @@
         </div>
     </header>
     <div class="container">
-        <!-- БЛОК С БАННЕРОМ И КНОПКОЙ (КАК НА СКРИНШОТЕ) -->
         <div class="main-banner">
             <img src="IMG_5425.png" alt="ПК Социальных программ РЕШЕНИЕ">
         </div>
@@ -104,7 +119,7 @@
             <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link">Перейти в калькулятор ЦПП</a>
         </div>
 
-        <h1>Жилищная social-программа кооператива</h1>
+        <h1>Жилищная социальная программа кооператива</h1>
         <p style="text-align: center; color: #64748b; margin-top: -15px; margin-bottom: 40px;">ПКСП РЕШЕНИЕ</p>
         
         <h2>Преимущества участия</h2>
@@ -172,16 +187,23 @@
             </div>
         </div>
 
-        <!-- КНОПКА 2: ДОКУМЕНТЫ ОРГАНИЗАЦИИ -->
+        <!-- КНОПКА 2: ДОКУМЕНТЫ ОРГАНИЗАЦИИ (ВОРОНКА НА СКАЧИВАНИЕ) -->
         <button class="accordion-btn">2. Документы организации</button>
         <div class="accordion-content">
             <div style="padding: 10px 0 20px 0;">
-                <div class="card" style="border-top: 4px solid #0f4c81; margin-bottom: 0;">
+                <div class="card" style="border-top: 4px solid #0f4c81; margin-bottom: 0; text-align: center;">
                     <h3>Учредительные документы</h3>
-                    <p style="color: #64748b; font-size: 0.95rem;">Информация о деятельности и документация [1.1]:</p>
-                    <ul style="list-style-type: none; padding-left: 0;">
-                        <li style="margin-bottom: 12px;">📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ» (PDF)</a></li>
-                        <li style="margin-bottom: 12px;">📄 <a href="/docs/programma.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Положение «Доступное жилье» (PDF)</a></li>
+                    <p style="color: #64748b; font-size: 0.95rem; text-align: left; margin-bottom: 15px;">
+                        Официальные документы и правила уставной рассрочки ПКСП «РЕШЕНИЕ» [1.1]. Нажмите на кнопку ниже, чтобы автоматически получить Положение о целевой программе в WhatsApp [1.1].
+                    </p>
+                    
+                    <!-- КНОПКА ВОРОНКИ НА ДОКУМЕНТЫ -->
+                    <a href="https://wa.me." target="_blank" class="btn-wa-funnel">
+                        🟢 Получить документы в WhatsApp
+                    </a>
+                    
+                    <ul style="list-style-type: none; padding-left: 0; text-align: left; margin-top: 20px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
+                        <li>📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ» (PDF)</a></li>
                     </ul>
                 </div>
             </div>
@@ -206,18 +228,27 @@
             </div>
         </div>
 
-        <!-- КНОПКА 4: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР -->
+        <!-- КНОПКА 4: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР (ВОРОНКА НА ЛИЧНЫЙ РАСЧЕТ) -->
         <button class="accordion-btn">4. Интерактивный калькулятор ЦПП</button>
         <div class="accordion-content">
             <div style="padding: 10px 0 20px 0;">
                 <div class="calc-redirect-box" style="margin: 0;">
-                    <h3>Расчет программ</h3>
-                    <p style="color: #475569; max-width: 600px; margin: 10px auto 25px auto;">
-                        Для расчета взносов перейдите на наш сервис [1.1].
+                    <h3>Расчет программ рассрочки</h3>
+                    <p style="color: #475569; max-width: 600px; margin: 10px auto 20px auto;">
+                        Вы можете воспользоваться калькулятором для базового расчета взносов [1.1].
                     </p>
-                    <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin: 0 auto;">Открыть калькулятор</a>
+                    <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin: 0 auto 15px auto;">Открыть калькулятор</a>
                     
-                    <div class="legal-notice">
+                    <p style="color: #475569; font-size: 0.95rem; margin-top: 20px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
+                        Каждая ситуация индивидуальна. Чтобы получить точный персональный график под ваш бюджет, запишитесь на разбор напрямую к руководителю кооператива [1.1].
+                    </p>
+                    
+                    <!-- КНОПКА ВОРОНКИ НА РАСЧЕТ К ГАРУНУ -->
+                    <a href="https://wa.me." target="_blank" class="btn-wa-funnel">
+                        🟢 Записаться на личный расчет
+                    </a>
+                    
+                    <div class="legal-notice" style="margin-top: 25px;">
                         <strong>Юридическая информация:</strong> Деятельность по ФЗ № 3085-1 [1.1].
                     </div>
                 </div>
