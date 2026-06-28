@@ -14,6 +14,7 @@
         h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
         h3 { color: #2c3e50; margin-top: 0; }
         
+        /* СТИЛИ ДЛЯ РАСКРЫВАЮЩЕГОСЯ СТОЛБЦА (АККОРДЕОН) */
         .accordion-btn {
             background-color: #f8fafc;
             color: #0f4c81;
@@ -81,7 +82,6 @@
         }
         .btn-calc-link:hover { background-color: #0c3d69; transform: translateY(-2px); }
         
-        /* СТИЛЬ ДЛЯ КНОПОК ВОРОНКИ В WHATSAPP */
         .btn-wa-funnel {
             display: inline-block;
             background-color: #25d366;
@@ -93,10 +93,32 @@
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
             transition: all 0.3s ease;
-            margin-top: 10px;
             text-align: center;
         }
         .btn-wa-funnel:hover { background-color: #20ba5a; transform: translateY(-1px); }
+
+        /* КНОПКИ МЕССЕНДЖЕРОВ ДЛЯ КОНТАКТОВ */
+        .btn-contact-item {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 6px;
+            color: #ffffff;
+            transition: all 0.3s ease;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .btn-contact-item:hover { transform: translateY(-1px); opacity: 0.9; }
+        .bg-wa { background-color: #25d366; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.2); }
+        .bg-tg { background-color: #229ED9; box-shadow: 0 4px 12px rgba(34, 158, 217, 0.2); }
+        .bg-max { background-color: #ff5722; box-shadow: 0 4px 12px rgba(255, 87, 34, 0.2); }
+        .bg-phone { background-color: #0f4c81; box-shadow: 0 4px 12px rgba(15, 76, 129, 0.2); }
 
         .center-box { text-align: center; margin: 20px 0; }
         .calc-redirect-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 35px; text-align: center; margin: 20px 0; }
@@ -160,7 +182,7 @@
                     <div class="step-num">2</div>
                     <div class="step-text">
                         <h4>Выбор недвижимости</h4>
-                        <p>Подбор вторичного жилья с «зеленкой» в Дагестане [1.1].</p>
+                        <p>Подбор вторичного жилья с «зеленкой» в Дагестанции [1.1].</p>
                     </div>
                 </div>
                 <div class="step-item">
@@ -187,20 +209,22 @@
             </div>
         </div>
 
-        <!-- КНОПКА 2: ДОКУМЕНТЫ ОРГАНИЗАЦИИ (ВОРОНКА НА СКАЧИВАНИЕ) -->
+        <!-- КНОПКА 2: ДОКУМЕНТЫ ОРГАНИЗАЦИИ (С ВЫБОРОМ МЕССЕНДЖЕРА) -->
         <button class="accordion-btn">2. Документы организации</button>
         <div class="accordion-content">
             <div style="padding: 10px 0 20px 0;">
                 <div class="card" style="border-top: 4px solid #0f4c81; margin-bottom: 0; text-align: center;">
-                    <h3>Учредительные документы</h3>
+                    <h3 style="text-align: left;">Учредительные документы</h3>
                     <p style="color: #64748b; font-size: 0.95rem; text-align: left; margin-bottom: 15px;">
-                        Официальные документы и правила уставной рассрочки ПКСП «РЕШЕНИЕ» [1.1]. Нажмите на кнопку ниже, чтобы автоматически получить Положение о целевой программе в WhatsApp [1.1].
+                        Официальные документы и правила уставной рассрочки ПКСП «РЕШЕНИЕ» [1.1]. Выберите удобный мессенджер, чтобы автоматически получить Положение о целевой программе [1.1]:
                     </p>
                     
-                    <!-- КНОПКА ВОРОНКИ НА ДОКУМЕНТЫ -->
-                    <a href="https://wa.me." target="_blank" class="btn-wa-funnel">
-                        🟢 Получить документы в WhatsApp
-                    </a>
+                    <!-- РЯД КНОПОК ВОРОНКИ ДЛЯ ДОКУМЕНТОВ -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 15px; margin-bottom: 15px;">
+                        <a href="https://wa.me." target="_blank" class="btn-wa-funnel">WhatsApp</a>
+                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
+                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
+                    </div>
                     
                     <ul style="list-style-type: none; padding-left: 0; text-align: left; margin-top: 20px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
                         <li>📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ» (PDF)</a></li>
@@ -228,25 +252,27 @@
             </div>
         </div>
 
-        <!-- КНОПКА 4: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР (ВОРОНКА НА ЛИЧНЫЙ РАСЧЕТ) -->
+        <!-- КНОПКА 4: ИНТЕРАКТИВНЫЙ КАЛЬКУЛЯТОР (РАЗБОР У ПРЕДСЕДАТЕЛЯ ПРАВЛЕНИЯ) -->
         <button class="accordion-btn">4. Интерактивный калькулятор ЦПП</button>
         <div class="accordion-content">
             <div style="padding: 10px 0 20px 0;">
-                <div class="calc-redirect-box" style="margin: 0;">
+                <div class="calc-redirect-box" style="margin: 0; text-align: center;">
                     <h3>Расчет программ рассрочки</h3>
                     <p style="color: #475569; max-width: 600px; margin: 10px auto 20px auto;">
                         Вы можете воспользоваться калькулятором для базового расчета взносов [1.1].
                     </p>
                     <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin: 0 auto 15px auto;">Открыть калькулятор</a>
                     
-                    <p style="color: #475569; font-size: 0.95rem; margin-top: 20px; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
-                        Каждая ситуация индивидуальна. Чтобы получить точный персональный график под ваш бюджет, запишитесь на разбор напрямую к руководителю кооператива [1.1].
+                    <p style="color: #475569; font-size: 0.95rem; margin-top: 20px; border-top: 1px dashed #cbd5e1; padding-top: 15px; text-align: left;">
+                        Каждая ситуация индивидуальна. Чтобы получить точный персональный график под ваш бюджет, запишитесь на разбор в удобном мессенджере напрямую к Председателю Правления кооператива [1.1].
                     </p>
                     
-                    <!-- КНОПКА ВОРОНКИ НА РАСЧЕТ К ГАРУНУ -->
-                    <a href="https://wa.me." target="_blank" class="btn-wa-funnel">
-                        🟢 Записаться на личный расчет
-                    </a>
+                    <!-- РЯД КНОПОК ВОРОНКИ НА РАСЧЕТ К ГАРУНУ -->
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 15px;">
+                        <a href="https://wa.me." target="_blank" class="btn-wa-funnel">WhatsApp</a>
+                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
+                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
+                    </div>
                     
                     <div class="legal-notice" style="margin-top: 25px;">
                         <strong>Юридическая информация:</strong> Деятельность по ФЗ № 3085-1 [1.1].
@@ -255,19 +281,26 @@
             </div>
         </div>
 
-    </div> <!-- Конец контейнера -->
-
-    <!-- СКРИПТ ДЛЯ ПЛАВНОГО РАСКРЫТИЯ СТОЛБЦА -->
-    <script>
-        var acc = document.getElementsByClassName("accordion-btn");
-        for (var i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var panel = this.nextElementSibling;
-                panel.style.maxHeight = panel.style.maxHeight ? null : panel.scrollHeight + "px";
-            });
-        }
-    </script>
+        <!-- КНОПКА 5: СТИЛЬНЫЕ КОНТАКТЫ В СТОЛБЕЦ -->
+        <button class="accordion-btn">5. Контакты и связь</button>
+        <div class="accordion-content">
+            <div style="padding: 15px 0 25px 0; text-align: center;">
+                <p style="color: #475569; font-size: 0.95rem; margin-bottom: 20px; text-align: left;">
+                    Вы можете связаться с нами любым удобным способом — позвонить напрямую по сотовой связи или написать в наши официальные группы:
+                </p>
+                
+                <div style="max-width: 320px; margin: 0 auto;">
+                    <!-- ПОЗВОНИТЬ -->
+                    <a href="tel:+79285776605" class="btn-contact-item bg-phone">📞 Позвонить на сотовый</a>
+                    
+                    <!-- WHATSAPP -->
+                    <a href="https://wa.me." target="_blank" class="btn-contact-item bg-wa">🟢 Написать в WhatsApp</a>
+                    
+                    <!-- TELEGRAM -->
+                    <a href="https://t.me" target="_blank" class="btn-contact-item bg-tg">🔵 Найти нас в Telegram</a>
+                    
+                    <!-- МАКС -->
+                    <a href="https://max.ru" target="_blank" class="btn-contact-item bg-max">🟠 Вступить в группу Макс</a>
     <!-- ФУТЕР: ВСЯ ОФИЦИАЛЬНАЯ ИНФОРМАЦИЯ, РЕКВИЗИТЫ И ГРАФИК С СУББОТОЙ -->
     <footer>
         <div class="container">
