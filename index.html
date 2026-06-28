@@ -3,96 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПКСП «РЕШЕНИЕ» — Официальный сайт кооператива</title>
+    <title>ПК СП «РЕШЕНИЕ» — Жилищная социальная программа</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; color: #2c3e50; margin: 0; padding: 0; line-height: 1.6; }
-        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 15px 20px; text-align: center; position: sticky; top: 0; z-index: 1000; }
+        header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 20px; text-align: center; }
         .container { max-width: 1000px; margin: 0 auto; padding: 20px; }
+        .main-banner { text-align: center; margin: 25px auto; max-width: 500px; padding: 0 15px; }
+        .main-banner img { width: 100%; height: auto; border-radius: 12px; box-shadow: 0 6px 20px rgba(15, 76, 129, 0.15); }
+        h1 { color: #0f4c81; font-size: 2.2rem; text-align: center; }
+        h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
+        h3 { color: #2c3e50; margin-top: 0; }
+        .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px; }
+        @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }
+        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 25px; margin-bottom: 20px; }
+        .card.success { border-top: 4px solid #2ecc71; }
+        .card.danger { border-top: 4px solid #e74c3c; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 10px; }
         
-        /* Меню навигации */
-        nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-        .nav-btn { background: #fff; border: 1px solid #0f4c81; color: #0f4c81; padding: 10px 20px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: all 0.3s ease; }
-        .nav-btn:hover { background-color: #0f4c81; color: #fff; }
-        .nav-btn.active { background-color: #0f4c81; color: #ffffff; }
-
-        /* Логика страниц */
-        .page-content { display: none; }
-        .page-content.active { display: block; animation: fadeIn 0.4s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        h1 { color: #0f4c81; font-size: 2rem; text-align: center; }
-        h2 { color: #0f4c81; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; }
-        .card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; margin-bottom: 20px; }
+        /* Дополнительные стили для новых блоков */
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 20px; background: #f8fafc; padding: 20px; border-radius: 8px; border-left: 4px solid #0f4c81; }
+        .step-num { background: #0f4c81; color: #fff; font-weight: bold; min-width: 35px; height: 35px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px; font-size: 1.1rem; }
+        .step-text h4 { margin: 0 0 5px 0; color: #0f4c81; font-size: 1.1rem; }
+        .step-text p { margin: 0; color: #475569; font-size: 0.95rem; }
+        .faq-item { margin-bottom: 15px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px; }
+        .faq-question { font-weight: bold; color: #0f4c81; margin-bottom: 8px; font-size: 1.05rem; }
+        .faq-answer { color: #475569; font-size: 0.95rem; margin: 0; }
         
-        /* Стили для разделов (сжато для краткости) */
-        .step-item { display: flex; margin-bottom: 15px; }
-        .step-num { background: #0f4c81; color: #fff; padding: 10px 15px; border-radius: 50%; margin-right: 15px; }
-        .faq-item { margin-bottom: 15px; padding: 15px; background: #f8fafc; border-radius: 8px; }
-        .faq-question { font-weight: bold; color: #0f4c81; }
+        .btn-calc-link {
+            display: inline-block;
+            background-color: #0f4c81;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(15, 76, 129, 0.3);
+            transition: all 0.3s ease;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .btn-calc-link:hover { background-color: #0c3d69; transform: translateY(-2px); }
+        .center-box { text-align: center; margin: 20px 0; }
         
-        @media (max-width: 768px) { .nav-btn { padding: 8px 12px; font-size: 0.85rem; } }
-        footer { text-align: center; padding: 20px; color: #64748b; font-size: 0.9rem; }
+        .calc-redirect-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 12px; padding: 35px; text-align: center; margin: 40px 0; }
+        .legal-notice { font-size: 0.8rem; color: #64748b; margin-top: 15px; text-align: justify; line-height: 1.4; }
+        footer { background-color: #f8fafc; border-top: 1px solid #e2e8f0; padding: 30px 20px; margin-top: 60px; font-size: 0.85rem; text-align: center; color: #64748b; }
+        .address-box { margin-bottom: 15px; font-style: normal; color: #475569; font-size: 0.9rem; line-height: 1.6; }
     </style>
 </head>
 <body>
     <header>
-        <strong>ПК СП «РЕШЕНИЕ»</strong>
-        <nav>
-            <button class="nav-btn active" onclick="switchPage('main')">Главная</button>
-            <button class="nav-btn" onclick="switchPage('how-it-works')">Как это работает</button>
-            <button class="nav-btn" onclick="switchPage('documents')">Документы</button>
-            <button class="nav-btn" onclick="switchPage('contacts')">Контакты</button>
-        </nav>
+        <div class="container">
+            <strong style="color: #0f4c81; font-size: 1.2rem; letter-spacing: 1px;">ПК СОЦИАЛЬНЫХ ПРОГРАММ «РЕШЕНИЕ»</strong>
+        </div>
     </header>
-
     <div class="container">
-        <!-- ГЛАВНАЯ -->
-        <div id="main" class="page-content active">
-            <h1>Жилищная программа «РЕШЕНИЕ»</h1>
-            <div class="card">
-                <p>Добро пожаловать в официальный кооператив. Мы помогаем приобрести жилье через паевой фонд.</p>
-                <a href="https://pksp-reshenieru.ru" target="_blank" style="color: #0f4c81; font-weight:bold;">Перейти к калькулятору</a>
-            </div>
+        <!-- БЛОК С БАННЕРОМ -->
+        <div class="main-banner">
+            <img src="IMG_5425.png" alt="ПК Социальных программ РЕШЕНИЕ">
         </div>
-         <!-- КАК ЭТО РАБОТАЕТ -->
-        <div id="how-it-works" class="page-content">
-            <h2>Как это работает</h2>
-            <div class="step-item"><div class="step-num">1</div><p>Вступление в кооператив (паспорт).</p></div>
-            <div class="step-item"><div class="step-num">2</div><p>Подбор недвижимости (вторичка).</p></div>
-            <div class="step-item"><div class="step-num">3</div><p>Взнос (от 30% до 50%).</p></div>
-            <div class="step-item"><div class="step-num">4</div><p>Выкуп и заселение.</p></div>
+        <!-- КНОПКА ПОД БАННЕРОМ -->
+        <div class="center-box">
+            <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link">Перейти в калькулятор ЦПП</a>
         </div>
 
-        <!-- ДОКУМЕНТЫ -->
-        <div id="documents" class="page-content">
-            <h2>Документы</h2>
-            <div class="card">
+        <h1>Жилищная социальная программа кооператива</h1>
+        <p style="text-align: center; color: #64748b; margin-top: -15px;">ПКСП РЕШЕНИЕ</p>
+        
+        <h2>Преимущества участия</h2>
+        <div class="grid">
+            <div class="card success">
+                <h3>ПКСП «РЕШЕНИЕ» ✓</h3>
                 <ul>
-                    <li><a href="/docs/ustav.pdf">Устав ПКСП (PDF)</a></li>
-                    <li><a href="/docs/programma.pdf">Программа «Доступное жилье» (PDF)</a></li>
+                    <li>Источник: Паевой фонд</li>
+                    <li>Условия: Фиксированные взносы</li>
+                    <li>Оформление: Паспорт</li>
+                </ul>
+            </div>
+            <div class="card danger">
+                <h3 style="text-decoration: line-through; color: #94a3b8;">Коммерческий банк ✗</h3>
+                <ul style="color: #94a3b8;">
+                    <li style="text-decoration: line-through;">Кредит</li>
+                    <li style="text-decoration: line-through;">Проценты</li>
+                    <li style="text-decoration: line-through;">Страховка</li>
                 </ul>
             </div>
         </div>
 
-        <!-- КОНТАКТЫ -->
-        <div id="contacts" class="page-content">
-            <h2>Контакты</h2>
-            <div class="card">
-                <p><strong>Адрес:</strong> Махачкала, ул. Плеханова, д. 50</p>
-                <p><strong>ИНН:</strong> 0500054766</p>
-                <p><strong>Режим работы:</strong> Пн-Пт, 09:00 - 18:00</p>
+        <!-- БЛОК: КАК ЭТО РАБОТАЕТ -->
+        <h2>Как это работает</h2>
+        <div style="list-style: none; padding: 0;">
+            <div class="step-item">
+                <div class="step-num">1</div>
+                <div class="step-text">
+                    <h4>Вступление</h4>
+                    <p>Подача заявления (паспорт).</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">2</div>
+                <div class="step-text">
+                    <h4>Подбор жилья</h4>
+                    <p>Вторичка в РД с «зеленкой».</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">3</div>
+                <div class="step-text">
+                    <h4>Паевой взнос</h4>
+                    <p>От 30% до 50% стоимости.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">4</div>
+                <div class="step-text">
+                    <h4>Выкуп и заселение</h4>
+                    <p>Кооператив добавляет сумму.</p>
+                </div>
+            </div>
+            <div class="step-item">
+                <div class="step-num">5</div>
+                <div class="step-text">
+                    <h4>Собственность</h4>
+                    <p>Рассрочка и оформление.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- БЛОК: ДОКУМЕНТЫ ОРГАНИЗАЦИИ -->
+        <h2>Документы</h2>
+        <div class="card" style="border-top: 4px solid #0f4c81; margin-bottom: 30px;">
+            <p style="color: #64748b; font-size: 0.95rem;">Устав и Положение о программе доступны по ссылкам:</p>
+            <ul style="list-style-type: none; padding-left: 0;">
+                <li style="margin-bottom: 12px;">📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ»</a></li>
+                <li style="margin-bottom: 12px;">📄 <a href="/docs/programma.pdf" target="_blank" style="color: #0f4c81; text-decoration: none;">Положение о программе</a></li>
+            </ul>
+        </div>
+        <!-- БЛОК: ВОПРОСЫ И ОТВЕТЫ (FAQ) -->
+        <h2>Часто задаваемые вопросы (FAQ)</h2>
+        <div class="faq-item">
+            <div class="faq-question">В чем выгода кооператива, если нет ссудных процентов?</div>
+            <p class="faq-answer">ПКСП — это некоммерческая структура, действующая за счет фиксированных уставных взносов, что исключает начисление процентов на средства пайщиков.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Что будет, если у меня возникнут временные финансовые трудности?</div>
+            <p class="faq-answer">Правление рассматривает ситуации индивидуально, возможны каникулы. При выходе предусмотрен возврат паевых взносов согласно ФЗ № 3085-1.</p>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Почему объект недвижимости до конца выплат оформлен на кооператив?</div>
+            <p class="faq-answer">Это юридическая гарантия безопасности имущества и паевого фонда до полного исполнения пайщиком обязательств по рассрочке.</p>
+        </div>
+
+        <!-- БЛОК РАСЧЕТА И ПРАВОВОЙ ОГОВОРКИ -->
+        <h2>Расчет участия в целевой программе</h2>
+        <div class="calc-redirect-box">
+            <h3>Интерактивный калькулятор ЦПП</h3>
+            <p style="color: #475569; max-width: 600px; margin: 10px auto 25px auto;">
+                Для расчета паевых взносов и графика платежей перейдите к нашему верифицированному инструменту.
+            </p>
+            <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);">Открыть калькулятор программ</a>
+            
+            <div class="legal-notice">
+                <strong>Важная правовая информация:</strong> Деятельность соответствует ФЗ № 3085-1. Расчеты не являются финансовой услугой или публичной офертой. Взносы вносятся по уставному графику, доступно членам ПКСП «Решение».
             </div>
         </div>
     </div>
 
-    <script>
-        function switchPage(pageId) {
-            document.querySelectorAll('.page-content').forEach(p => p.classList.remove('active'));
-            document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
-            event.currentTarget.classList.add('active');
-            window.scrollTo(0, 0);
-        }
-    </script>
+    <footer>
+        <div class="container">
+            <address class="address-box">
+                <strong>ПОТРЕБИТЕЛЬСКИЙ КООПЕРАТИВ СОЦИАЛЬНЫХ ПРОГРАММ "РЕШЕНИЕ"</strong><br>
+                ИНН: 0500054766 | ОГРН: 1260500008317<br>
+                <strong>Официальный адрес:</strong> Индекс 367915, Республика Дагестан, г. Махачкала, ул. Плеханова, д. 50<br>
+                <strong>Режим работы офиса:</strong> Пн-Пт, с 09:00 до 18:00
+            </address>
+            <p>© 2026 ПКСП «РЕШЕНИЕ». Все права защищены. Некоммерческая деятельность.</p>
+        </div>
+    </footer>
 </body>
 </html>
