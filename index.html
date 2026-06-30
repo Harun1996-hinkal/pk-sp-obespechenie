@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ПК СП «РЕШЕНИЕ» — Жилищная социальная программа</title>
+    <title>ПКСП «РЕШЕНИЕ» — Жилищная социальная программа</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #ffffff; color: #2c3e50; margin: 0; padding: 0; line-height: 1.6; }
         header { background-color: #ffffff; border-bottom: 1px solid #e2e8f0; padding: 20px; text-align: center; }
@@ -14,6 +14,7 @@
         h2 { color: #0f4c81; font-size: 1.8rem; border-bottom: 2px solid #e2e8f0; padding-bottom: 10px; margin-top: 40px; }
         h3 { color: #2c3e50; margin-top: 0; }
         
+        /* ИСПРАВЛЕННЫЕ СТИЛИ АККОРДЕОНА: ТЕПЕРЬ ССЫЛКИ ВНУТРИ БУДУТ КЛИКАТЬСЯ НА 100% */
         .accordion-btn {
             background-color: #f8fafc; color: #0f4c81; cursor: pointer; padding: 18px; width: 100%;
             border: 1px solid #e2e8f0; border-left: 5px solid #0f4c81; text-align: left; outline: none;
@@ -119,23 +120,54 @@
         <button class="accordion-btn">1. Как это работает</button>
         <div class="accordion-content">
             <div style="padding: 20px 0;">
-                <div class="step-item"><div class="step-num">1</div><div class="step-text"><h4>Вступление в проект</h4><p>Оформление участия в ПКСП «РЕШЕНИЕ» с паспортом [1.1].</p></div></div>
-                <div class="step-item"><div class="step-num">2</div><div class="step-text"><h4>Выбор недвижимости</h4><p>Подбор вторичного жилья с «зеленкой» в Дагестане [1.1].</p></div></div>
-                <div class="step-item"><div class="step-num">3</div><div class="step-text"><h4>Паевой взнос</h4><p>Взнос от 30% до 50% стоимости жилья [1.1].</p></div></div>
-                <div class="step-item"><div class="step-num">4</div><div class="step-text"><h4>Выкуп и заселение</h4><p>Кооператив добавляет средства и передает вам объект [1.1].</p></div></div>
-                <div class="step-item"><div class="step-num">5</div><div class="step-text"><h4>Полная собственность</h4><p>Рассрочка и переоформление жилья после закрытия долга [1.1].</p></div></div>
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <div class="step-text">
+                        <h4>Вступление в проект</h4>
+                        <p>Оформление официального участия в ПКСП «РЕШЕНИЕ» на основании заявления и паспорта.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <div class="step-text">
+                        <h4>Самостоятельный подбор жилья</h4>
+                        <p>Вы сами находите любой подходящий объект недвижимости на вторичном рынке Республики Дагестан. Главное условие — наличие готовых документов и права собственности («зеленки»). Кооператив недвижимость не ищет, а выступает финансовым партнером.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <div class="step-text">
+                        <h4>Паевой взнос</h4>
+                        <p>Внесение первоначальной части паевого взноса (от 30% до 50% от стоимости выбранного вами жилья) на расчетный счет организации.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">4</div>
+                    <div class="step-text">
+                        <h4>Выкуп и заселение</h4>
+                        <p>Кооператив добавляет оставшиеся средства из общего фонда, полностью выкупает объект и передает его вам в пользование. Вы заселяетесь.</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">5</div>
+                    <div class="step-text">
+                        <h4>Полная собственность</h4>
+                        <p>Вы спокойно выплачиваете остаток по уставному графику рассрочки. После внесения финального платежа жилье бесплатно переоформляется на ваше имя в Росреестре.</p>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <button class="accordion-btn">2. Документы organization</button>
+        <button class="accordion-btn">2. Документы организации</button>
         <div class="accordion-content">
             <div style="padding: 20px 0;">
-                <div class="card" style="border-top: 4px solid #0f4c81; text-align: center; margin-bottom:0;">
-                    <p style="color: #64748b; font-size: 0.95rem; text-align: left; margin-bottom: 15px;">Выберите удобный мессенджер, чтобы получить Положение о целевой программе [1.1]:</p>
+                <div class="card" style="border-top: 4px solid #0f4c81; text-align: center; margin-bottom: 0;">
+                    <h3 style="text-align: left;">Учредительные документы</h3>
+                    <p style="color: #64748b; font-size: 0.95rem; text-align: left; margin-bottom: 15px;">Выберите удобный мессенджер, чтобы автоматически получить Положение о целевой программе:</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 15px;">
                         <a href="https://wa.me." target="_blank" class="btn-wa-funnel">WhatsApp</a>
-                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
-                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
+                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin: 0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
+                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin: 0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
                     </div>
                     <ul style="list-style-type: none; padding-left: 0; text-align: left; border-top: 1px dashed #cbd5e1; padding-top: 15px;">
                         <li>📄 <a href="/docs/ustav.pdf" target="_blank" style="color: #0f4c81; font-weight: bold; text-decoration: none;">Устав ПКСП «РЕШЕНИЕ» (PDF)</a></li>
@@ -147,9 +179,9 @@
         <button class="accordion-btn">3. Часто задаваемые вопросы (FAQ)</button>
         <div class="accordion-content">
             <div style="padding: 20px 0;">
-                <div class="faq-item"><div class="faq-question">В чем выгода?</div><p class="faq-answer">ПКСП — некоммерческая структура, работающая без процентов, за счет целевых взносов пайщиков для обеспечения программ [1.1].</p></div>
-                <div class="faq-item"><div class="faq-question">Финансовые трудности?</div><p class="faq-answer">Индивидуальный подход, возможность каникул и выход из программы с возвратом пая [1.1].</p></div>
-                <div class="faq-item"><div class="faq-question">Оформление собственности?</div><p class="faq-answer">Объект оформлен на кооператив до полного погашения рассрочки для безопасности сделки [1.1].</p></div>
+                <div class="faq-item"><div class="faq-question">В чем выгода кооператива?</div><p class="faq-answer">ПКСП — это некоммерческая структура. Мы не зарабатываем на процентах. Деятельность и обслуживание программ финансируются исключительно за счет фиксированных уставных членских взносов пайщиков.</p></div>
+                <div class="faq-item"><div class="faq-question">Что будет при возникновении финансовых трудностей?</div><p class="faq-answer">Каждая ситуация рассматривается индивидуально. Предусмотрена возможность предоставления каникул, а при вынужденном выходе из программы пайщику возвращаются все его паевые взносы по закону.</p></div>
+                <div class="faq-item"><div class="faq-question">Почему жилье временно оформляется на кооператив?</div><p class="faq-answer">Это главная законная гарантия безопасности общего паевого фонда фонда. Объект остается защищенным на балансе организации, пока пайщик полностью не закроет график рассрочки.</p></div>
             </div>
         </div>
 
@@ -158,13 +190,13 @@
             <div style="padding: 20px 0;">
                 <div class="calc-redirect-box" style="margin: 0;">
                     <h3>Расчет программ рассрочки</h3>
-                    <p style="color: #475569; margin-bottom: 20px;">Вы можете воспользоваться калькулятором для базового расчета взносов [1.1].</p>
+                    <p style="color: #475569; margin-bottom: 20px;">Вы можете перейти на наш отдельный сервис для проведения базового расчета взносов.</p>
                     <a href="https://pksp-reshenieru.ru" target="_blank" class="btn-calc-link" style="background-color: #10b981; box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3); margin-bottom: 20px;">Открыть калькулятор</a>
-                    <p style="color: #475569; font-size: 0.95rem; border-top: 1px dashed #cbd5e1; padding-top: 15px; text-align: left;">Чтобы получить точный персональный график, запишитесь на разбор в мессенджерах напрямую к Председателю Правления [1.1]:</p>
+                    <p style="color: #475569; font-size: 0.95rem; border-top: 1px dashed #cbd5e1; padding-top: 15px; text-align: left;">Чтобы получить точный персональный график под ваш бюджет, запишитесь на разбор в мессенджерах напрямую к Председателю Правления кооператива:</p>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-top: 15px;">
                         <a href="https://wa.me." target="_blank" class="btn-wa-funnel">WhatsApp</a>
-                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
-                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin:0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
+                        <a href="https://t.me" target="_blank" class="btn-calc-link" style="margin: 0; padding: 12px 25px; font-size: 1rem; background-color: #229ED9; box-shadow: none; border-radius: 6px;">Telegram</a>
+                        <a href="https://max.ru" target="_blank" class="btn-calc-link" style="margin: 0; padding: 12px 25px; font-size: 1rem; background-color: #ff5722; box-shadow: none; border-radius: 6px;">Макс</a>
                     </div>
                 </div>
             </div>
@@ -173,7 +205,7 @@
         <button class="accordion-btn">5. Контакты и связь</button>
         <div class="accordion-content">
             <div style="padding: 20px 0; text-align: center;">
-                <p style="color: #475569; text-align: left; margin-bottom: 20px;">Свяжитесь с нами удобным способом — позвоните или напишите в мессенджеры [1.1]:</p>
+                <p style="color: #475569; text-align: left; margin-bottom: 20px;">Свяжитесь с нами удобным способом — позвоните напрямую или напишите в мессенджеры:</p>
                 <div style="max-width: 320px; margin: 0 auto;">
                     <a href="tel:+79285776605" class="btn-contact-item bg-phone">📞 Позвонить на сотовый</a>
                     <a href="https://wa.me." target="_blank" class="btn-contact-item bg-wa">🟢 Написать в WhatsApp</a>
@@ -184,6 +216,7 @@
         </div>
     </div> <!-- Конец контейнера -->
 
+    <!-- СКРИПТ: ИСПРАВЛЕН И СБАЛАНСИРОВАН -->
     <script>
         var acc = document.getElementsByClassName("accordion-btn");
         for (var i = 0; i < acc.length; i++) {
@@ -204,7 +237,7 @@
             <address class="address-box">
                 <strong>ПОТРЕБИТЕЛЬСКИЙ КООПЕРАТИВ СОЦИАЛЬНЫХ ПРОГРАММ "РЕШЕНИЕ"</strong><br>
                 ИНН: 0500054766 | ОГРН: 1260500008317<br>
-                <strong>Официальный адрес:</strong> Индекс 367915, Republic Дагестан, г. Махачкала, ул. Плеханова, д. 50<br>
+                <strong>Официальный адрес:</strong> Индекс 367915, Республика Дагестан, г. Махачкала, ул. Плеханова, д. 50<br>
                 <strong>Режим работы офиса:</strong> Понедельник – Суббота, с 09:00 до 18:00
             </address>
             <p>© 2026 ПКСП «РЕШЕНИЕ». Все права защищены. Деятельность некоммерческая, регулируется Законодательством РФ.</p>
